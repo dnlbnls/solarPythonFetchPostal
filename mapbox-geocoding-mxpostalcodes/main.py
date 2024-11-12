@@ -5,7 +5,7 @@ import csv
 import time
 import sqlite3
 
-mapbox_access_token = 'pk.eyJ1IjoiZG5sYm5scyIsImEiOiJjbGxqdTl2NGIxcnl2M2twa2p6Y3p4bTQ2In0.gG1vNxrKrowI5BbPdywgkw'
+mapbox_access_token = ''
 # mapbox_access_token = 'pk.eyJ456'
 
 
@@ -133,101 +133,3 @@ for index, row in df.iterrows():
 
   except Exception as e:
     print('\033[91m' + e)
-
-
-
-
-
-# with open("output.csv",'a+', encoding='UTF8', newline='') as f:
-#   writer = csv.writer(f, dialect='excel', delimiter='|')
-#   writer.writerow( list(df.columns.values) )
-
-# mpresult = fetch_geocode_data(query, mapbox_access_token, "MX", 1)
-# print(mpresult)
-# print(mpresult.json())
-# print(mpresult.text)
-# print(json.loads(mpresult.text))
-
-
-# simulacion_reason = obj_pre['reason'] if ('reason' in obj_pre) else ''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# yave_user = "eduardo.gutierrez+yave@truehome.com.mx"
-# yave_pass = "aQ7?WN#NzM9Vu8kT"
-# yave_sl_origin = "service_truehome"
-
-
-
-# file_name = 'muestra.xlsx'
-# excel_document = openpyxl.load_workbook(file_name)
-
-# sheet = excel_document['pre_aprobadores_20210511']
-# data_range = sheet.tables.items()[0][1]
-# data = sheet[data_range]
-
-# token = json.loads(authyave().text)['token']
-# cdmx_state_code = 9
-
-# for index, row in enumerate(data):
-    
-#     try:
-    
-#         rfc = row[13].value
-#         score = int(row[7].value)
-#         property_price = float(row[6].value)
-#         down_payment = (float(row[6].value) - float(row[1].value))
-#         bc_credit_history_xml = row[12].value
-#         tax_scheme = row[14].value
-#         income = float(row[3].value) + float(row[4].value)
-#         income_frecuency = 'MONTHLY'
-#         income_type = 'NET'
-#         property_location = cdmx_state_code
-#         bc_credit_history_xml = '<Cuentas>' + bc_credit_history_xml + '</Cuentas>'
-#         down_payment = 0 if (down_payment < 0) else down_payment
-
-#         simulacion_preaprobacion = simularpreaprobacionyave(token, rfc, score, property_price, down_payment, bc_credit_history_xml, tax_scheme, income, income_frecuency, income_type, property_location)
-#         obj_pre = json.loads(simulacion_preaprobacion.text)
-
-#         simulacion_accepted = obj_pre['accepted'] if ('accepted' in obj_pre) else ''
-#         simulacion_max_loan = obj_pre['max_loan'] if ('max_loan' in obj_pre) else ''
-#         simulacion_max_loan_payment = obj_pre['max_loan_payment'] if ('max_loan_payment' in obj_pre) else ''
-#         simulacion_id = obj_pre['id'] if ('id' in obj_pre) else ''
-#         simulacion_reason = obj_pre['reason'] if ('reason' in obj_pre) else ''
-
-#         timestr = time.strftime("%Y%m%d-%H%M%S")
-        
-#         row[15].value = simulacion_accepted
-#         row[16].value = simulacion_reason
-#         row[17].value = simulacion_max_loan
-#         row[18].value = simulacion_max_loan_payment
-#         row[19].value = simulacion_id
-#         row[20].value = str(obj_pre)
-        
-#         print(index, simulacion_accepted, simulacion_max_loan, simulacion_max_loan_payment, simulacion_id, simulacion_reason)
-
-#     except Exception as e:
-        
-#         print(e)
-        
-# excel_document.save(path + timestr + '_' + file_name)
-# excel_document.save(timestr + '_' + file_name)
-
-
-# for idx, column in enumerate(data[0]):
-#     print(idx, column.value)
