@@ -3,6 +3,9 @@ import pandas as pd
 import random as random
 import os.path
 
+# Script expect toQueryPostalCodes.csv in folder assets
+# with structure codigoPostal,ciudad,estadoNombreCorto
+
 db_name = 'postalCodes.sqlite3'
 
 if not os.path.exists(db_name):
